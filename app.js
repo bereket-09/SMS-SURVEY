@@ -5,15 +5,15 @@ const app = express();
 app.use(express.json());
 
 // Route configurations
-const authRoutes = require("./routes/authRoutes");
-const surveyRoutes = require("./routes/surveyRoutes");
-const reportRoutes = require("./routes/reportRoutes");
-const smsRoutes = require("./routes/smsRoutes");
+const authRoutes = require("./controllers/authController");
+const surveyRoutes = require("./controllers/surveyController");
+// const reportRoutes = require("./controllers/reportController");
+const smsRoutes = require("./controllers/smsController");
 
 app.use("/api/auth", authRoutes);
 app.use("/api/surveys", surveyRoutes);
-app.use("/api/reports", reportRoutes);
-app.use("/api/manage-sms", smsRoutes);
+// app.use("/api/reports", reportRoutes);
+// app.use("/api/manage-sms", smsRoutes);
 
 // Error handling middleware
 app.use((err, req, res, next) => {
